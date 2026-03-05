@@ -4,13 +4,16 @@ import aiohttp
 import asyncio
 import random
 import json
+import os
 from datetime import datetime
+from dotenv import load_dotenv
 import pytz
 
 # ─── CONFIG ───────────────────────────────────────────────
-DISCORD_TOKEN = "MTQ3ODkyNTc3MjU3MDg4NjM3Ng.GEN5DO.sCj4R6C4L12U_7Erqdc1E_pPsRZFwF6fdKbLmI"
-GROQ_API_KEY = "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"
-CHANNEL_ID = 1478925599639867554
+load_dotenv()
+DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+CHANNEL_ID = int(os.getenv("CHANNEL_ID"))
 QUIZ_HOUR = 1   # 1 AM
 QUIZ_MINUTE = 0
 TIMEZONE = "Africa/Cairo"  # Egypt timezone
